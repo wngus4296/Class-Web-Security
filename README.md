@@ -15,9 +15,9 @@
 <div markdown="1">       
 
     📌 필요한 파일: LocalFileRead.php, process_local_file_read.php, passwd.txt, hosts.txt
-  1. LocalFileRead.php: Form을 사용해서 사용자가 local 파일명을 입력할 수 있도록 구현함.<br>
+  1. **LocalFileRead.php**: Form을 사용해서 사용자가 local 파일명을 입력할 수 있도록 구현함.<br>
   Form에서 메소드는 GET으로, action은 process_local_file_read.php 로 설정함.
-  2. process_local_file_read.php : GET 요청을 통해 들어온 파일명에 대해 readfile 함수를 적용해서 입력된 파일을 읽음.
+  2. **process_local_file_read.php**: GET 요청을 통해 들어온 파일명에 대해 readfile 함수를 적용해서 입력된 파일을 읽음.
   3. 브라우저에서 http://127.0.0.1/LocalFileRead.php 로 접속함.
   4. 웹사이트에서 local 파일명으로 passwd.txt 를 입력한 후에, 화면에 passwd, passwd, passwd가 출력되는지 확인함.
   5. 웹 사이트에서 local 파일명으로 hosts.txt 를 입력한 후에, 화면에 Hosts, Hosts, Hosts가 출력되는지 확인함.
@@ -27,6 +27,24 @@
       - 사용자가 입력한 파일명에 블랙리스트 내용이 있으면 해당 파일에 대한 readfile 함수 수행을 차단함 (preg_match 함수를 이용함)
       ```
   7. (4), (5)를 다시 수행했을 때, passwd.txt와 hosts.txt 파일 내용 정보들이 화면에 출력되지 않는지를 확인함.
+    
+</div>
+</details>
+
+<details>
+<summary>Remote Command Execution 실습</summary>
+<div markdown="1">       
+
+    📌 필요한 파일: RemoteCommandExecution.php, process_remote_command_execution.php
+  1. **RemoteCommandExecution.php**: Form을 사용해서 사용자가 명령어를 입력할 수 있도록 구현함.<br>
+    Form에서 메소드는 GET으로, action은 process_remote_command_execution.php 로 설정함.
+  2. **process_remote_command_execution.php**: GET 요청을 통해 들어온 명령어에 대해 system 함수를 적용해서 실행시킴.
+  3. 브라우저에서 http://127.0.0.1/RemoteCommandExecution.php 로 접속함.
+  4. 웹 사이트에서 명령어로 ls 를 입력한 후에, 파일 관련 정보들이 화면에 출력되는지 확인함.
+  5. 웹 사이트에서 명령어로 ls;pwd 를 입력한 후에, 파일 관련 정보들과 현재 디렉토리 정보가 화면에 출력되는지 확인함.
+  6. process_remote_command_execution.php에서 escapeshellcmd 함수를 이용해서 세미콜론 (;)을 필터링 하는 부분을 구현함.
+  7. (6)을 다시 수행했을 때 파일 관련 정보들이 화면에 출력되는지 확인함.
+  8. (7)을 다시 수행했을 때 어떤 정보도 출력되지 않는 것을 확인함.
     
 </div>
 </details>
