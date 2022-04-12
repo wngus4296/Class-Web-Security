@@ -48,3 +48,23 @@
     
 </div>
 </details>
+
+<details>
+<summary>Remote Code Execution 실습</summary>
+<div markdown="1">       
+
+    📌 필요한 파일: RemoteCodeExecution.php, process_remote_code_execution.php
+  1. **RemoteCodeExecution.php**: Form을 사용해서 사용자가 명령어를 입력할 수 있도록 구현함.<br>
+    Form에서 메소드는 GET으로, action은 process_remote_code_execution.php 로 설정함.
+  2. **process_remote_code_execution.php**: GET 요청을 통해 들어온 명령어에 대해 eval 함수를 적용해서 실행시킴.
+  3. 브라우저에서 http://127.0.0.1/RemoteCodeExecution.php 로 접속함.
+  4. 웹 사이트에서 명령어로 phpinfo(); 를 입력한 후에, php 관련 정보들이 화면에 출력되는지 확인함.
+  5. php 관련 정보들이 화면에 출력되는 것을 막기 위해서, process_remote_code_execution.php에 아래의 필터링 기능을 구현함.
+      ```
+      - “;” 문자열이 포함된 블랙리스트를 array로 선언
+      - 사용자가 입력한 코드에 블랙리스트 내용이 있으면 해당 코드에 대한 eval 함수 수행을 차단함 (preg_match 함수를 이용함)
+      ```
+  6. (4)을 다시 수행했을 때 파일 관련 정보들이 화면에 출력되는지 확인함.
+    
+</div>
+</details>
