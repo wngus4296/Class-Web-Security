@@ -11,7 +11,7 @@
 
 ### 1️⃣ PHP 코드 취약점 실습
 <details>
-<summary>Local File Read 실습</summary>
+<summary>Local File Read</summary>
 <div markdown="1">       
 
     📌 필요한 파일: LocalFileRead.php, process_local_file_read.php, passwd.txt, hosts.txt
@@ -32,7 +32,7 @@
 </details>
 
 <details>
-<summary>Remote Command Execution 실습</summary>
+<summary>Remote Command Execution</summary>
 <div markdown="1">       
 
     📌 필요한 파일: RemoteCommandExecution.php, process_remote_command_execution.php
@@ -50,7 +50,7 @@
 </details>
 
 <details>
-<summary>Remote Code Execution 실습</summary>
+<summary>Remote Code Execution</summary>
 <div markdown="1">       
 
     📌 필요한 파일: RemoteCodeExecution.php, process_remote_code_execution.php
@@ -65,6 +65,30 @@
       - 사용자가 입력한 코드에 블랙리스트 내용이 있으면 해당 코드에 대한 eval 함수 수행을 차단함 (preg_match 함수를 이용함)
       ```
   6. (4)을 다시 수행했을 때 파일 관련 정보들이 화면에 출력되는지 확인함.
+    
+</div>
+</details>
+
+<br>
+
+### 2️⃣ DoS 실습
+<details>
+<summary>iframe 무한 생성</summary>
+<div markdown="1">       
+    
+</div>
+</details>
+
+<details>
+<summary>무한 팝업창</summary>
+<div markdown="1">       
+    
+</div>
+</details>
+
+<details>
+<summary>무한 루프</summary>
+<div markdown="1">       
     
 </div>
 </details>
